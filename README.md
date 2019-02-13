@@ -12,4 +12,4 @@ I added the functionality to add new todos and to save the state locally.
 ## Improvements I Wanna Add:
 * [ ] Add Style (currently just the simple stuff)
 * [ ] Add API to collect and save todo's on some cloud storage
-* [ ] Convert this to React Native to use on Android
+* [X] Convert this to React Native to use on Android -> Doing this in [this rep](https://github.com/ISTeo/simpleTodoReactNative).
