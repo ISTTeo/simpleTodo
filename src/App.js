@@ -11,18 +11,65 @@ class App extends Component {
 		this.state = {
 			todos: todosData
 		}
-    this.handleChange = this.handleChange.bind(this)
+    this.delTodo = this.delTodo.bind(this)
+		this.checkIt = this.checkIt.bind(this)
+		this.delCompletedTodos = this.delCompletedTodos.bind(this)
 		this.addTodo = this.addTodo.bind(this)
+		this.componentDidMount()
   }
 
-  handleChange(id) {
+	componentDidMount() {
+    const state = JSON.parse(window.localStorage.getItem("saved_state"));
+
+    console.log(state);
+
+    if (state) {
+      this.loadState(state);
+    }
+  }
+
+	componentDidUpdate() {
+    const state = {
+      todos: this.state.todos
+    };
+
+    window.localStorage.setItem("saved_state", JSON.stringify(state));
+
+  }
+
+	loadState = ({ todos }) => {
+    this.state.todos = todos
+  }
+
+  delCompletedTodos() {
 		const allTodos = this.state.todos
-		const filtered = allTodos.filter(x => x.id !== id)
+		const filtered = allTodos.filter(todo => !todo.completed)
 		this.setState({todos:filtered})
 
   }
 
-	addTodo(value,todos) {
+	delTodo(id) {
+		const allTodos = this.state.todos
+		const filtered = allTodos.filter(todo => todo.id !== id)
+		this.setState({todos:filtered})
+	}
+
+	checkIt(id) {
+		const allTodos = this.state.todos
+		const filtered = allTodos.filter(x => x.id !== id)
+		this.setState(prevState => {
+			const updatedTodos = this.state.todos.map( todo => {
+				if (todo.id === id) {
+					todo.completed = !todo.completed
+				}
+				return todo
+			})
+			return {
+				todos:updatedTodos
+			}
+		})
+	}
+	addTodo(value) {
 		const allTodos = this.state.todos
 		const lastTodo = this.state.todos.slice(-1)[0]
 		const newId = lastTodo.id + 1
@@ -36,13 +83,15 @@ class App extends Component {
       <TodoItem
         key={item.id}
         item={item}
-        handleChange={this.handleChange}
+        delTodo={this.delTodo}
+				checkIt={this.checkIt}
       />
     )
 		const text = ""
     return (
-      <div className="todo-list">
+      <div>
         {todoItems}
+				<button onClick = {this.delCompletedTodos}> Deleted Completed </button>
 				<TodoForm addTodo={this.addTodo} todos={this.state.todos}/>
       </div>
 		);

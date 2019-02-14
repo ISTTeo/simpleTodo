@@ -7,6 +7,7 @@ My first ReactJS app. Started by following this [awesome tutorial](https://www.y
 ## Functionality
 
 Very basic app. As in the the tutorial it allows for a set of todo's and to delete them.
+Your todo can be completed or not, if it's completed you can delete it and you can also delete all completed todos at once.
 I added the functionality to add new todos and to save the state locally.
 
 ## Improvements I Wanna Add:
