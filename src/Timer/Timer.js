@@ -30,10 +30,15 @@ class Timer extends React.Component {
   }
 
   startCountdown() {
-    //TODO: When button is pressed starts countdown
+    this.intervalHandle = setInterval(this.tick, 1000)
+    let time = this.state.min
+    this.setState({
+      secRemaining: time*60
+    })
   }
   tick() {
     //TODO: Mechanism to "count" time
+    console.log("h")
   }
 
   render() {

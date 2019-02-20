@@ -4,7 +4,7 @@ class StartButton extends React.Component {
   render() {
     return(
       <div>
-        <button>START</button>
+        <button onClick={this.props.startCountdown}>START</button>
       </div>
     )
   }
