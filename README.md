@@ -14,4 +14,7 @@ I added the functionality to add new todos and to save the state locally.
 * [ ] Add Style (currently just the simple stuff)
 * [ ] Add API to collect and save todo's on some cloud storage
 * [X] Convert this to React Native to use on Android -> Doing this in [this rep](https://github.com/ISTeo/simpleTodoReactNative).
-* [ ] Add a timer like in a Pomodoro App. 
+* [ ] Add a timer like in a Pomodoro App.
+
+## Currently Working On - Pomodoro
+**Display is not updating properly by change on the input**
