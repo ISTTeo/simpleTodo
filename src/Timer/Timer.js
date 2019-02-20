@@ -17,7 +17,16 @@ class Timer extends React.Component {
   }
 
   handleChange(event) {
-    //TODO: Change CountdownDisplay
+    const minutes = event.target.value //TimerInput
+    if (minutes<10) {
+      this.setState({
+        min: '0' + minutes //Just making it look a bit nicer
+      })
+    } else {
+      this.setState({
+        min: minutes
+      })
+    }
   }
 
   startCountdown() {
