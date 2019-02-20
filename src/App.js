@@ -4,6 +4,7 @@ import './App.css';
 import todosData from "./todosData"
 import TodoItem from "./TodoItem"
 import TodoForm from './TodoForm'
+import Timer from './Timer/Timer'
 class App extends Component {
 
 	constructor() {
@@ -93,6 +94,7 @@ class App extends Component {
         {todoItems}
 				<button onClick = {this.delCompletedTodos}> Deleted Completed </button>
 				<TodoForm addTodo={this.addTodo} todos={this.state.todos}/>
+				<Timer/>
       </div>
 		);
   }
