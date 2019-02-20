@@ -30,9 +30,9 @@ class Timer extends React.Component {
   render() {
     return(
       <div>
-        <TimerInput />
-        <CountdownDisplay />
-        <StartButton />
+        <TimerInput handleChange={this.handleChange}/>
+        <CountdownDisplay min={this.state.min} sec={this.state.sec}/>
+        <StartButton startCountdown={this.startCountdown}/>
       </div>
     )
   }
