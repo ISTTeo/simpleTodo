@@ -1,4 +1,6 @@
 import React from 'react'
+import TimerApp from './Timer/TimerApp'
+import './App.css';
 
 function TodoItem(props) {
     if (props.item.completed) {
@@ -15,13 +17,15 @@ function TodoItem(props) {
       )
     } else {
       return (
-        <div>
+        <div className="todoItem">
             <input
                 type="checkbox"
                 checked={props.item.completed}
                 onChange={() => props.checkIt(props.item.id)}
             />
             {props.item.text}
+            <TimerApp/>
+
 
         </div>
       )
