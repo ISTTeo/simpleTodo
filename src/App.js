@@ -89,12 +89,12 @@ class App extends Component {
       />
     )
 		const text = ""
-		//{todoItems}
-		//<button onClick = {this.delCompletedTodos}> Deleted Completed </button>
-		//<TodoForm addTodo={this.addTodo} todos={this.state.todos}/>
+
     return (
       <div>
-				<TimerApp/>
+				{todoItems}
+				<button onClick = {this.delCompletedTodos}> Deleted Completed </button>
+				<TodoForm addTodo={this.addTodo} todos={this.state.todos}/>
       </div>
 		);
   }

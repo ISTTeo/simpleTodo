@@ -22,6 +22,10 @@
   color: #61dafb;
 }
 
+.todoItem {
+  background-color: #a5b8e2;
+  border-style: solid;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
