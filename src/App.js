@@ -4,7 +4,7 @@ import './App.css';
 import todosData from "./todosData"
 import TodoItem from "./TodoItem"
 import TodoForm from './TodoForm'
-import Timer from './Timer/Timer'
+import TimerApp from './Timer/TimerApp'
 class App extends Component {
 
 	constructor() {
@@ -89,12 +89,12 @@ class App extends Component {
       />
     )
 		const text = ""
+		//{todoItems}
+		//<button onClick = {this.delCompletedTodos}> Deleted Completed </button>
+		//<TodoForm addTodo={this.addTodo} todos={this.state.todos}/>
     return (
       <div>
-        {todoItems}
-				<button onClick = {this.delCompletedTodos}> Deleted Completed </button>
-				<TodoForm addTodo={this.addTodo} todos={this.state.todos}/>
-				<Timer/>
+				<TimerApp/>
       </div>
 		);
   }

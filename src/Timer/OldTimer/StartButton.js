@@ -1,11 +1,10 @@
 import React from 'react'
 
 class StartButton extends React.Component {
-
   render() {
-    return (
+    return(
       <div>
-        <button onClick={this.props.startCountDown}>Start</button>
+        <button onClick={this.props.startCountdown}>START</button>
       </div>
     )
   }
