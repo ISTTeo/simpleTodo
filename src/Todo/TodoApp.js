@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import './App.css';
+import './Todo.css';
 import todosData from "./todosData"
 import TodoItem from "./TodoItem"
 import TodoForm from './TodoForm'
-import TimerApp from './../Timer/TimerApp'
 class TodoApp extends Component {
 
 	constructor() {
@@ -84,12 +83,14 @@ class TodoApp extends Component {
       />
     )
 		const text = ""
+		//<button onClick = {this.delCompletedTodos}> Deleted Completed </button>
 
     return (
       <div>
-				{todoItems}
-				<button onClick = {this.delCompletedTodos}> Deleted Completed </button>
 				<TodoForm addTodo={this.addTodo} todos={this.state.todos}/>
+				<ul>
+					{todoItems}
+				</ul>
       </div>
 		);
   }

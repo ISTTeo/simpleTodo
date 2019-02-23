@@ -7,8 +7,6 @@ import TodoApp from './Todo/TodoApp'
 class App extends Component {
 
   render() {
-
-
     return (
       <div>
 				<TodoApp />

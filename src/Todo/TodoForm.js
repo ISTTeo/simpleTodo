@@ -14,14 +14,12 @@ class TodoForm extends React.Component {
 
   render() {
     return (
-    
-      <form onSubmit={this.handleSubmit}>
-        <label>
-          New todo:
-        </label>
-          <input type="text" ref={(input) => this.input = input}/>
-
-      </form>
+      <div className='header'>
+        <h2 >My To Do List</h2>
+        <form onSubmit={this.handleSubmit}>
+            <input type="text" ref={(input) => this.input = input}/>
+        </form>
+      </div>
     )
   }
 }
