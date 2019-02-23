@@ -1,6 +1,6 @@
 import React from 'react'
-import TimerApp from './Timer/TimerApp'
 import './App.css';
+import TimerApp from './../Timer/TimerApp'
 
 function TodoItem(props) {
     if (props.item.completed) {
